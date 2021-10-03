@@ -46,21 +46,6 @@ func _physics_process(delta: float) -> void:
 		_tilt(-1, delta)
 	if Input.is_action_pressed("tilt_forward"):
 		_tilt(1, delta)
-		
-	
-func _integrate_forces(state: Physics2DDirectBodyState) -> void:
-	# Spin the pedals
-	pass
-#	crank.global_rotation = back_wheel.global_rotation
-#	crank.global_position = crank_pos.global_position
-#	state.angular_velocity = back_wheel.angular_velocity
-#
-#
-#	torso.global_rotation = seat_pos.global_rotation
-#	torso.global_position = seat_pos.global_position
-#
-#	head.angular_velocity = 2.0
-	
 
 
 func _accelerate(direction: int, delta: float) -> void:

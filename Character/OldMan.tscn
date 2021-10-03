@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Character/Assets/old_man.png" type="Texture" id=1]
+[ext_resource path="res://Character/Scripts/OldMan.gd" type="Script" id=2]
+[ext_resource path="res://UI/Prompt.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 210, 142 )
+
+[node name="OldMan" type="Node2D"]
+position = Vector2( 752, 282 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -5
+texture = ExtResource( 1 )
+centered = false
+
+[node name="SpawnLocation" type="Position2D" parent="."]
+
+[node name="Prompt" type="AnimatedSprite" parent="."]
+position = Vector2( 186, 32 )
+scale = Vector2( 2, 2 )
+frames = ExtResource( 3 )
+frame = 1
+playing = true
+
+[node name="Dialogue_Checker" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue_Checker"]
+position = Vector2( 156, 112 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Dialogue_Checker" to="." method="_on_Dialogue_Checker_body_entered"]
+[connection signal="body_exited" from="Dialogue_Checker" to="." method="_on_Dialogue_Checker_body_exited"]

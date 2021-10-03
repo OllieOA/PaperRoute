@@ -12,7 +12,3 @@ func _ready() -> void:
 	trailer_basket.mass = 10.0
 	
 	trailer_basket.angular_damp = 50.0
-	
-	
-
-

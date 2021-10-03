@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Oldman-04.ogg-b1c52b5e4aab769685017d5657dcdecf.oggstr"
+
+[deps]
+
+source_file="res://Sound/Oldman-04.ogg"
+dest_files=[ "res://.import/Oldman-04.ogg-b1c52b5e4aab769685017d5657dcdecf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

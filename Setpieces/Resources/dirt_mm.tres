@@ -1,0 +1,41 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://Setpieces/Assets/grass_edge.png" type="Texture" id=1]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" type="Script" id=2]
+[ext_resource path="res://addons/rmsmartshape/materials/edge_material.gd" type="Script" id=3]
+[ext_resource path="res://addons/rmsmartshape/normal_range.gd" type="Script" id=4]
+[ext_resource path="res://Setpieces/Assets/grass_corner.png" type="Texture" id=5]
+[ext_resource path="res://Setpieces/Assets/dirt_taper_right.png" type="Texture" id=6]
+[ext_resource path="res://Setpieces/Assets/dirt_taper_left.png" type="Texture" id=7]
+
+[sub_resource type="Resource" id=58]
+script = ExtResource( 3 )
+textures = [ ExtResource( 1 ) ]
+texture_normals = [  ]
+textures_corner_outer = [ ExtResource( 5 ) ]
+textures_corner_inner = [  ]
+texture_normals_corner_outer = [ ExtResource( 5 ) ]
+texture_normals_corner_inner = [  ]
+textures_taper_left = [ ExtResource( 7 ) ]
+textures_taper_right = [ ExtResource( 6 ) ]
+texture_normals_taper_left = [  ]
+texture_normals_taper_right = [  ]
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id=59]
+script = ExtResource( 4 )
+begin = 135.0
+distance = 270.0
+edgeRendering = Vector2( 0, 0 )
+
+[resource]
+script = ExtResource( 2 )
+edge_material = SubResource( 58 )
+normal_range = SubResource( 59 )
+weld = true
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
