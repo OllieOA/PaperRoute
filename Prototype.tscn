@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Character/Trailer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Character/Character.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Setpieces/Assets/school_setpiece.png" type="Texture" id=9]
 [ext_resource path="res://Props/Newspaper.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Character/Assets/old_man.png" type="Texture" id=11]
 
 [sub_resource type="Resource" id=20]
 script = ExtResource( 4 )
@@ -263,3 +264,10 @@ position = Vector2( 260, 146 )
 
 [node name="Newspaper5" parent="Newspapers" instance=ExtResource( 10 )]
 position = Vector2( 302, 94 )
+
+[node name="OldMan" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="OldMan"]
+position = Vector2( 918, 404 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 11 )

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "KinematicLimb",
+"language": "GDScript",
+"path": "res://KinematicLimb.gd"
+}, {
 "base": "Resource",
 "class": "RMS2D_Material",
 "language": "GDScript",
@@ -140,6 +145,7 @@ _global_script_classes=[ {
 "path": "res://addons/rmsmartshape/vertex_properties.gd"
 } ]
 _global_script_class_icons={
+"KinematicLimb": "",
 "RMS2D_Material": "",
 "RMS2D_VertexProperties": "",
 "RMS2D_VertexPropertiesArray": "",
@@ -241,6 +247,8 @@ tilt_forward={
 2d_physics/layer_4="trailer"
 2d_physics/layer_5="trailer_wheel"
 2d_physics/layer_6="newspaper"
+2d_physics/layer_7="bike_crank"
+2d_physics/layer_8="body"
 
 [physics]
 
