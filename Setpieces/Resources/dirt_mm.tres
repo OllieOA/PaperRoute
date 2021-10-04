@@ -8,7 +8,7 @@
 [ext_resource path="res://Setpieces/Assets/dirt_taper_right.png" type="Texture" id=6]
 [ext_resource path="res://Setpieces/Assets/dirt_taper_left.png" type="Texture" id=7]
 
-[sub_resource type="Resource" id=58]
+[sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 textures = [ ExtResource( 1 ) ]
 texture_normals = [  ]
@@ -24,7 +24,7 @@ use_corner_texture = true
 use_taper_texture = true
 fit_mode = 0
 
-[sub_resource type="Resource" id=59]
+[sub_resource type="Resource" id=2]
 script = ExtResource( 4 )
 begin = 135.0
 distance = 270.0
@@ -32,8 +32,8 @@ edgeRendering = Vector2( 0, 0 )
 
 [resource]
 script = ExtResource( 2 )
-edge_material = SubResource( 58 )
-normal_range = SubResource( 59 )
+edge_material = SubResource( 1 )
+normal_range = SubResource( 2 )
 weld = true
 render = true
 z_index = 0

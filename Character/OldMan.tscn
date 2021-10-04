@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Character/Assets/old_man.png" type="Texture" id=1]
 [ext_resource path="res://Character/Scripts/OldMan.gd" type="Script" id=2]
 [ext_resource path="res://UI/Prompt.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Setpieces/Assets/Props/grass_extender.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 210, 142 )
@@ -10,6 +11,12 @@ extents = Vector2( 210, 142 )
 [node name="OldMan" type="Node2D"]
 position = Vector2( 752, 282 )
 script = ExtResource( 2 )
+
+[node name="GrassExtender" type="Sprite" parent="."]
+position = Vector2( 140, 196 )
+scale = Vector2( 3, 3 )
+z_index = -5
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
@@ -23,7 +30,6 @@ centered = false
 position = Vector2( 186, 32 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 3 )
-frame = 1
 playing = true
 
 [node name="Dialogue_Checker" type="Area2D" parent="."]

@@ -265,6 +265,7 @@ accept_dialogue={
 2d_physics/layer_7="bike_crank"
 2d_physics/layer_8="body"
 2d_physics/layer_9="oldman"
+2d_physics/layer_10="goals"
 
 [physics]
 
