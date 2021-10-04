@@ -59,8 +59,10 @@ var text_speed = 0.02
 onready var timer = $Timer
 onready var dialogue_name = $Name
 onready var dialogue_text = $Text
-onready var indicator = $Indicator
 onready var portrait = $Portrait
+onready var skip_button = $Skip/AnimationPlayer
+onready var next_button = $Next/AnimationPlayer
+onready var space_button = $Next2/AnimationPlayer
 
 var dialogue
 signal dialogue_complete_bool
@@ -68,6 +70,10 @@ var phrase_number = 0
 var finished = false
 
 func _ready() -> void:
+	skip_button.play("Prompt")
+	next_button.play("Prompt")
+	space_button.play("Prompt")
+	
 	timer.wait_time = text_speed
 	dialogue = get_dialogue()
 	assert(dialogue, "Dialogue file missing after reading it!")
@@ -75,12 +81,14 @@ func _ready() -> void:
 	next_phrase()
 
 func _process(delta: float) -> void:
-	indicator.visible = finished
 	if Input.is_action_just_pressed("accept_dialogue"):
 		if finished:
 			next_phrase()
 		else:
 			dialogue_text.visible_characters = len(dialogue_text.text)
+	if Input.is_action_just_pressed("skip_dialogue"):
+		world_parameters.current_dialogue_completed = true
+		queue_free()
 
 func get_dialogue() -> Array:
 	var f = File.new()

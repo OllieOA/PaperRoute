@@ -20,7 +20,6 @@ func _ready() -> void:
 	first_dialogue_finished = false
 	one_shot_dialogue = "res://UI/Dialogue/Level" + str(curr_level) + "/dialogue_" + str(curr_level) + "_one_shot.json"
 	repeat_dialogue = "res://UI/Dialogue/Level" + str(curr_level) + "/dialogue_" + str(curr_level) + "_repeat.json"
-	print(gate.get_name())
 
 func _process(delta: float) -> void:
 	if player_in_range:

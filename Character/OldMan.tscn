@@ -30,6 +30,7 @@ centered = false
 position = Vector2( 186, 32 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 3 )
+frame = 1
 playing = true
 
 [node name="Dialogue_Checker" type="Area2D" parent="."]

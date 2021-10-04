@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lost_paper_3.ogg-679950157099783d373bcaa26dbd2160.oggstr"
+
+[deps]
+
+source_file="res://Sound/lost_paper_3.ogg"
+dest_files=[ "res://.import/lost_paper_3.ogg-679950157099783d373bcaa26dbd2160.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

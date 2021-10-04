@@ -7,7 +7,7 @@
 [ext_resource path="res://Setpieces/Assets/grass_taper_right.png" type="Texture" id=5]
 [ext_resource path="res://Setpieces/Assets/grass_taper_left.png" type="Texture" id=6]
 
-[sub_resource type="Resource" id=1]
+[sub_resource type="Resource" id=3]
 script = ExtResource( 3 )
 textures = [ ExtResource( 1 ) ]
 texture_normals = [  ]
@@ -31,7 +31,7 @@ edgeRendering = Vector2( 0, 0 )
 
 [resource]
 script = ExtResource( 2 )
-edge_material = SubResource( 1 )
+edge_material = SubResource( 3 )
 normal_range = SubResource( 2 )
 weld = true
 render = true
