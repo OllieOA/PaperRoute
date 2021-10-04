@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Character/Trailer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/rmsmartshape/shapes/point.gd" type="Script" id=2]
@@ -148,9 +148,6 @@ fill_texture_z_index = -10
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 506.593, 21.3709 )
-
 [sub_resource type="Resource" id=134]
 script = ExtResource( 4 )
 texture_idx = -8
@@ -242,6 +239,19 @@ point_in = Vector2( 0, 0 )
 point_out = Vector2( 0, 0 )
 properties = SubResource( 146 )
 
+[sub_resource type="Resource" id=149]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=150]
+script = ExtResource( 2 )
+position = Vector2( 625.612, 1009.73 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 149 )
+
 [sub_resource type="Resource" id=148]
 script = ExtResource( 6 )
 _points = {
@@ -251,13 +261,14 @@ _points = {
 3: SubResource( 141 ),
 4: SubResource( 143 ),
 10: SubResource( 145 ),
-12: SubResource( 147 )
+12: SubResource( 147 ),
+13: SubResource( 150 )
 }
-_point_order = [ 0, 12, 10, 1, 2, 4, 3 ]
+_point_order = [ 0, 12, 10, 1, 2, 4, 13, 3 ]
 _constraints = {
 [ 0, 3 ]: 15
 }
-_next_key = 13
+_next_key = 14
 
 [sub_resource type="Resource" id=48]
 script = ExtResource( 5 )
@@ -277,6 +288,137 @@ extents = Vector2( 100, 524 )
 [sub_resource type="RectangleShape2D" id=116]
 extents = Vector2( 100, 524 )
 
+[sub_resource type="Resource" id=151]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=152]
+script = ExtResource( 2 )
+position = Vector2( 1873.82, 602.36 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 151 )
+
+[sub_resource type="Resource" id=153]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=154]
+script = ExtResource( 2 )
+position = Vector2( 4173.56, 566.603 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 153 )
+
+[sub_resource type="Resource" id=155]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=156]
+script = ExtResource( 2 )
+position = Vector2( 4167.98, 1556.85 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 155 )
+
+[sub_resource type="Resource" id=157]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=158]
+script = ExtResource( 2 )
+position = Vector2( 1873.82, 602.36 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 157 )
+
+[sub_resource type="Resource" id=159]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=160]
+script = ExtResource( 2 )
+position = Vector2( 1921.93, 1556.47 )
+point_in = Vector2( 0, 0 )
+point_out = Vector2( 0, 0 )
+properties = SubResource( 159 )
+
+[sub_resource type="Resource" id=161]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=162]
+script = ExtResource( 2 )
+position = Vector2( 3009.03, 283.701 )
+point_in = Vector2( -587.894, -97.8317 )
+point_out = Vector2( 303.883, 58.1978 )
+properties = SubResource( 161 )
+
+[sub_resource type="Resource" id=163]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=164]
+script = ExtResource( 2 )
+position = Vector2( 2228.97, 470.292 )
+point_in = Vector2( -225.666, 125.017 )
+point_out = Vector2( 225.666, -125.017 )
+properties = SubResource( 163 )
+
+[sub_resource type="Resource" id=165]
+script = ExtResource( 4 )
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id=166]
+script = ExtResource( 2 )
+position = Vector2( 3822.84, 546.574 )
+point_in = Vector2( -593.299, -36.0219 )
+point_out = Vector2( 228.844, 25.4271 )
+properties = SubResource( 165 )
+
+[sub_resource type="Resource" id=167]
+script = ExtResource( 6 )
+_points = {
+0: SubResource( 152 ),
+1: SubResource( 154 ),
+2: SubResource( 156 ),
+3: SubResource( 158 ),
+4: SubResource( 160 ),
+9: SubResource( 162 ),
+12: SubResource( 164 ),
+13: SubResource( 166 )
+}
+_point_order = [ 0, 12, 9, 13, 1, 2, 4, 3 ]
+_constraints = {
+[ 0, 3 ]: 15
+}
+_next_key = 15
+
+[sub_resource type="Resource" id=168]
+script = ExtResource( 5 )
+_edge_meta_materials = [ ExtResource( 13 ), ExtResource( 12 ) ]
+fill_textures = [ ExtResource( 11 ) ]
+fill_texture_normals = [  ]
+fill_texture_z_index = -10
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
 [sub_resource type="DynamicFont" id=81]
 size = 30
 outline_size = 2
@@ -290,6 +432,7 @@ script = ExtResource( 7 )
 position = Vector2( 464, 272 )
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
+position = Vector2( 16, -106 )
 current = true
 smoothing_enabled = true
 
@@ -312,71 +455,6 @@ collision_offset = 0.0
 collision_polygon_node_path = NodePath("")
 
 [node name="GroundTiles" type="Node2D" parent="."]
-
-[node name="Ground2" type="StaticBody2D" parent="GroundTiles"]
-position = Vector2( 2110, 208 )
-rotation = -0.613953
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundTiles/Ground2"]
-position = Vector2( 514.178, 530.899 )
-shape = SubResource( 19 )
-
-[node name="ColorRect" type="ColorRect" parent="GroundTiles/Ground2"]
-margin_left = 3.52832
-margin_top = 513.128
-margin_right = 43.5283
-margin_bottom = 553.128
-grow_horizontal = 2
-rect_scale = Vector2( 25.4308, 0.800928 )
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ground3" type="StaticBody2D" parent="GroundTiles"]
-position = Vector2( 2578, 374 )
-rotation = -1.15866
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundTiles/Ground3"]
-position = Vector2( 514.178, 530.899 )
-shape = SubResource( 19 )
-
-[node name="ColorRect" type="ColorRect" parent="GroundTiles/Ground3"]
-margin_left = 3.52832
-margin_top = 513.128
-margin_right = 43.5283
-margin_bottom = 553.128
-grow_horizontal = 2
-rect_scale = Vector2( 25.4308, 0.800928 )
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ground" type="StaticBody2D" parent="GroundTiles"]
-position = Vector2( 2310, -198 )
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundTiles/Ground"]
-position = Vector2( 514.178, 530.899 )
-shape = SubResource( 19 )
-
-[node name="ColorRect" type="ColorRect" parent="GroundTiles/Ground"]
-margin_left = 3.52832
-margin_top = 513.128
-margin_right = 43.5283
-margin_bottom = 553.128
-grow_horizontal = 2
-rect_scale = Vector2( 25.4308, 0.800928 )
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Shape_00_Parent" type="StaticBody2D" parent="GroundTiles" groups=[
 "ground",
@@ -402,7 +480,7 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GroundTiles/Shape_00_Parent"]
 modulate = Color( 1, 1, 1, 0.3 )
-polygon = PoolVector2Array( 221.095, 422.314, 1266.45, 407.162, 2363.5, 407.397, 2636.63, 417.893, 2640.37, 1378.45, 221.369, 1379.92 )
+polygon = PoolVector2Array( 221.088, 422.403, 1266.45, 407.162, 2363.5, 407.397, 2636.63, 417.893, 2640.37, 1378.45, 221.363, 1379.83, 212.612, 889.744 )
 
 [node name="Bottom" type="Area2D" parent="GroundTiles"]
 position = Vector2( 210, 1688 )
@@ -432,6 +510,32 @@ collision_mask = 511
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundTiles/InvisibleWall"]
 position = Vector2( -194, -1580 )
 shape = SubResource( 116 )
+
+[node name="Shape_01_Parent" type="StaticBody2D" parent="GroundTiles" groups=[
+"ground",
+]]
+position = Vector2( -286, -36 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="Shape_01" type="Node2D" parent="GroundTiles/Shape_01_Parent"]
+script = ExtResource( 3 )
+_points = SubResource( 167 )
+material_overrides = {
+}
+shape_material = SubResource( 168 )
+tessellation_stages = 5
+tessellation_tolerence = 4.0
+flip_edges = false
+render_edges = true
+collision_size = 32.0
+collision_offset = 0.0
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GroundTiles/Shape_01_Parent"]
+visible = false
+modulate = Color( 1, 1, 1, 0.3 )
+polygon = PoolVector2Array( 1870.56, 599.63, 1897.58, 599.285, 1966.77, 583.183, 2078.27, 543.646, 2228.96, 470.267, 2303.16, 422.355, 2419.94, 330.506, 2450.07, 310.867, 2483.16, 293.408, 2520.49, 278.564, 2563.36, 266.763, 2613.06, 258.431, 2670.87, 253.979, 2815.98, 258.483, 3009.04, 283.682, 3061.74, 295.835, 3106.92, 310.214, 3146.14, 326.473, 3180.97, 344.248, 3307.41, 423.44, 3384.75, 462.895, 3432.4, 481.355, 3488.12, 498.469, 3630, 527.303, 3822.84, 546.57, 4176.77, 563.591, 4171.26, 1560.15, 1918.89, 1559.66 )
 
 [node name="Trailer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 273.5, 315.5 )
