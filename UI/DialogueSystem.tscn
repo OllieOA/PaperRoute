@@ -182,6 +182,11 @@ volume_db = -10.0
 [node name="Player_voice" type="AudioStreamPlayer" parent="DialogueBox"]
 volume_db = -10.0
 
+[node name="Dad_voice" type="AudioStreamPlayer" parent="DialogueBox"]
+volume_db = -10.0
+
+[node name="tv_voice" type="AudioStreamPlayer" parent="DialogueBox"]
+
 [node name="SkipLabel" type="RichTextLabel" parent="DialogueBox"]
 margin_left = 1204.0
 margin_top = 216.0

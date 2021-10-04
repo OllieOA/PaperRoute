@@ -1,0 +1,37 @@
+[
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "...so, boy... did you mow any lawns this afternoon? Prune any bushes?"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Oh, uh.. I went with the paper route..."
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "WHAT?! Hanging around that old man McLudum? I don't bloody think so!"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "He wasn't that bad..."
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "What's he giving you anyway.. Couple a bucks per paper? Show me..."
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "How do you expect to pay ME for what YOU broke with this kind of cash?"
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "You better deliver a LOT more papers or so help me..."
+	}
+]

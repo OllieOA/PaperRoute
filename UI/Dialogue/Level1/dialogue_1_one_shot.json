@@ -7,6 +7,61 @@
 	{
 		"Name": "You",
 		"Emotion": "Neutral",
+		"Text": "Yeah, suppose so..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "You should be happy! Not many of your friends have taken up my offer for the paper route..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Happy",
+		"Text": "*COUGH* And I couldn't think of a better way to spend an afternoon!"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Sure... Whatever"
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "You'll see the value of this work one day..."
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "You know I'm only doing this because my dad... uhh... doesn't think I'm responsible."
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "It was this or cutting grass. You're just lucky I like riding my bike..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "*COUGH* Okay, well, I'll give you a few extras. They can be slippery little things."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "For your first run, you can just head through the backroads. I've only got two customers on that route."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "Shouldn't take you too long? $5 per paper delivered... Bit of pocket money, eh? *COUGH*"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
 		"Text": "Yeah, got it..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "Make sure you get home quickly, now!"
 	}
 ]

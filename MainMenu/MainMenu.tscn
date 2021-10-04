@@ -5,23 +5,7 @@
 [ext_resource path="res://MainMenu/ui_game_menu_base.png" type="Texture" id=3]
 [ext_resource path="res://MainMenu/MainMenuSelection.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sound/SadMusic.ogg" type="AudioStream" id=5]
-
-[sub_resource type="Animation" id=1]
-resource_name = "TitleAnimation"
-length = 1.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.8, 1, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
-}
+[ext_resource path="res://UI/newspaper_promo.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
@@ -40,6 +24,7 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Frame" type="NinePatchRect" parent="."]
+self_modulate = Color( 0.235294, 0.227451, 0.588235, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
@@ -53,16 +38,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 10, 10 )
-centered = false
-hframes = 6
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/TitleAnimation = SubResource( 1 )
-
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+bus = "Music"
 
 [node name="SplashText" type="Node2D" parent="."]
 position = Vector2( 78, 966 )
@@ -113,6 +91,11 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1060, 778 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 6 )
 
 [connection signal="tween_completed" from="PulseUp" to="." method="_on_PulseUp_tween_completed"]
 [connection signal="tween_completed" from="PulseUp2" to="." method="_on_PulseUp2_tween_completed"]

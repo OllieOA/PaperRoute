@@ -1,0 +1,37 @@
+[
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "*COUGH* Look, lad. I've gotta get to an appointment. *COUGH*"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Are you okay?"
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Happy",
+		"Text": "Yes, yes *COUGH*, good enough. I've only got one customer today, but..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "It's not an easy trip... you'll have to cut through the construction yard."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "You be very careful, now!"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Yeah... hey... let me know if I can help? Y'know... get you some medicine maybe?"
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "*COUGH* Thanks boy. I'll be all right..."
+	}
+]

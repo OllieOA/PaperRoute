@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DadNoises-02.ogg-6d00766faf192a826558576f4cfc907a.oggstr"
+
+[deps]
+
+source_file="res://Sound/DadNoises-02.ogg"
+dest_files=[ "res://.import/DadNoises-02.ogg-6d00766faf192a826558576f4cfc907a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -11,7 +11,7 @@ export var curr_level = 0
 
 onready var prompt_player = $Prompt
 onready var dialogue_handler = preload("res://UI/DialogueSystem.tscn")
-onready var gate = get_tree().get_current_scene().get_node("GroundTiles/InvisibleGate")
+#onready var gate = get_tree().get_root().get_node("GroundTiles/InvisibleGate")
 
 var one_shot_dialogue
 var repeat_dialogue
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("activate"):
 			if not first_dialogue_finished and not dialogue_currently_playing:
 				dialogue_currently_playing = true
-				gate.queue_free()
+				get_tree().get_current_scene().get_node("GroundTiles/InvisibleGate").queue_free()
 				play_dialogue(one_shot_dialogue)
 				first_dialogue_finished = true
 			else:
@@ -45,6 +45,7 @@ func play_dialogue(dialogue_path_to_play):
 	world_parameters.current_dialogue_completed = false
 	var dialogue_instance = dialogue_handler.instance()
 	dialogue_instance.get_node("DialogueBox").dialogue_path = dialogue_path_to_play
+	dialogue_instance.get_node("DialogueBox").show_portraits = true
 	get_tree().get_current_scene().get_node("CanvasLayer/DialogueRenderer").add_child(dialogue_instance)
 	
 	while not world_parameters.current_dialogue_completed:

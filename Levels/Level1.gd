@@ -1,5 +1,8 @@
 extends Node2D
 
+signal player_crashed
+signal lost_papers
+
 onready var newspaper = preload("res://Props/Newspaper.tscn")
 
 onready var character = $Character
@@ -25,12 +28,17 @@ var trailer_respawn
 var relative_dist
 var num_papers_respawn
 var winnable
+var lost
 var talked_to_old_man
+var next_level = "res://Levels/SadScene1.tscn"
+onready var lose_menu = $CanvasLayer/LoseMenu
+onready var timeout_menu = $CanvasLayer/TimeoutMenu
+onready var win_noise = $WinNoise
 
 # UI
 onready var papers_label = $CanvasLayer/Margin_Text/VBox/NumPapers
 onready var delivered_label = $CanvasLayer/Margin_Text/VBox/Delivered
-onready var money_label = $CanvasLayer/Margin_Text/VBox/Money
+onready var time_label = $CanvasLayer/Margin_Text/VBox/TimeLeft
 onready var parallax = $CanvasLayer/Parallax
 
 # Music
@@ -43,7 +51,9 @@ onready var goal2 = $GoalAreas/Goal2
 # Level completion
 export var newspapers_for_level = 6
 export var deliveries_for_level = 2
+export var seconds_for_level = 50.0
 var delivered = 0
+var level_timer
 
 func _ready() -> void:
 	# Join trailer up
@@ -62,11 +72,19 @@ func _ready() -> void:
 	# Level control
 	talked_to_old_man = false
 	winnable = true
+	lost = false
+	level_timer = Timer.new()
+	add_child(level_timer)
+	level_timer.set_one_shot(true)
+	level_timer.set_wait_time(seconds_for_level)
+	level_timer.connect("timeout", self, "_out_of_time")
 	
 	
 func _process(delta: float) -> void:
-	if not winnable:
-		print("LOSE")
+	if not winnable and not lost:
+		lost = true
+		# Emit signal
+		lose_menu.lost_papers = true
 	
 	var curr_papers = newspaper_node.get_child_count()
 	var text_to_set_papers = "Papers: " + str(curr_papers)
@@ -75,14 +93,23 @@ func _process(delta: float) -> void:
 	var text_to_set_deliver = "Delivered: " + str(delivered) + "/" + str(deliveries_for_level)
 	delivered_label.text = text_to_set_deliver
 	
-	var text_to_set_money = "Total Money: $" + str(world_parameters.money)
-	money_label.text = text_to_set_money
+	var time_left = level_timer.get_time_left()
+	var minutes_left = floor(time_left / 60.0)
+	var seconds_left = int(time_left) % 60
+	var seconds_str = "%02d" % seconds_left
+		
+	var text_to_set_time = "Time Left: " + str(minutes_left) + ":" + seconds_str
+	time_label.text = text_to_set_time
 	
-	var scroll = Vector2.ZERO
-	scroll.x += character.linear_velocity.x
-	parallax.scroll_offset += scroll
+#	var scroll = Vector2.ZERO
+#	scroll.x += character.linear_velocity.x
+#	parallax.scroll_offset += scroll
 	
 	# Check if winnable
+	var num_curr_papers = len(newspaper_node.get_children())
+	var outstanding_deliveries = deliveries_for_level - delivered
+	if num_curr_papers < outstanding_deliveries and talked_to_old_man:
+		winnable = false
 	
 
 func _physics_process(delta: float) -> void:
@@ -93,6 +120,7 @@ func _oldman_spawn_papers() -> void:
 	_spawn_papers(newspapers_for_level)
 	num_papers_respawn = newspapers_for_level
 	talked_to_old_man = true
+	level_timer.start(seconds_for_level)
 
 func _goal_completed():
 	delivered += 1
@@ -106,7 +134,10 @@ func _goal_completed():
 	num_papers_respawn = len(curr_papers) - 1
 	
 	if delivered == deliveries_for_level:
-		print("WIN")
+		music.stop()
+		win_noise.play()
+		yield(get_tree().create_timer(0.5), "timeout")
+		scene_transition.goto_scene(next_level)
 
 func _spawn_papers(num_to_spawn) -> void:
 	character.linear_velocity = Vector2.ZERO
@@ -124,3 +155,7 @@ func _spawn_papers(num_to_spawn) -> void:
 		newspaper_instance.global_position = newspaper_spawn_location.global_position
 		newspaper_node.add_child(newspaper_instance)
 	newspaper_spawn_location.global_position = original_spawn_pos
+
+
+func _out_of_time():
+	timeout_menu.timed_out = true

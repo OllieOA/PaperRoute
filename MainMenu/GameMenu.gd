@@ -30,7 +30,6 @@ func _input(event: InputEvent) -> void:
 
 func _on_ExitButton_pressed() -> void:
 	menu_clicker.play()
-	SaveState.save_game()
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().quit()
 

@@ -1,0 +1,27 @@
+[
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "*HIC* Whatcha got fo' me today, boy?"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Here, only a few papers today. I'm sorry!"
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "Hey.. it's okay bud... You'll just have ta *HIC*"
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "...pick up some more work, hey? *HIC*"
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "Now... leave me be... or there'll be trouble."
+	}
+]

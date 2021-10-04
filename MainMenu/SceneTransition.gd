@@ -31,6 +31,17 @@ func process_scene_transition(path):
 	animator_player.play()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("level1"):
+		goto_scene("res://Levels/Level1.tscn")
+	if event.is_action_pressed("level2"):
+		goto_scene("res://Levels/Level2.tscn")
+	if event.is_action_pressed("level3"):
+		goto_scene("res://Levels/Level3.tscn")
+	if event.is_action_pressed("level4"):
+		goto_scene("res://Levels/Level4.tscn")
+	
+
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	# Only transition once animation has completed

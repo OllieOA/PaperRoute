@@ -1,0 +1,47 @@
+[
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "Well, you look a bit down in the dumps, today. You okay?"
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Yeah, suppose so..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Happy",
+		"Text": "Ah.. well.. *COUGH* It's nothing a bike ride can't fix! This must be your second week with me, right?"
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Happy",
+		"Text": "Why not take a trip on the suburban paper route? The roads are a little rough..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "But your helmet will keep you safe, I am sure! Your trailer might cause trouble, though..."
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Happy",
+		"Text": "Either way, I've got 3 customers on that route."
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "Three?? I better be getting paid more for that!"
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "*COUGH* Of course, of course, dear boy. Now, hop to it!"
+	},
+	{
+		"Name": "Old Man McLudum",
+		"Emotion": "Neutral",
+		"Text": "*COUGH* As I said, the roads are rough.. better take a few extras, just in case!"
+	}
+]

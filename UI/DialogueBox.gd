@@ -2,7 +2,11 @@ extends NinePatchRect
 
 onready var oldman_voice = $OldMan_voice
 onready var player_voice = $Player_voice
+onready var dad_voice = $Dad_voice
+onready var tv_voice = $tv_voice
+var show_portraits = false
 
+var chair_portrait = preload("res://UI/Dialogue/Portraits/portrait_ChairNeutral.png")
 
 # Oldman audio
 var oldman_happy = preload("res://UI/Dialogue/Portraits/portrait_OldManHappy.png")
@@ -35,6 +39,8 @@ var player_sound3 = preload("res://Sound/Player-03.ogg")
 var player_sound4 = preload("res://Sound/Player-04.ogg")
 var player_sound5 = preload("res://Sound/Player-05.ogg")
 
+var player_shock = preload("res://Sound/player_sad_noise.ogg")
+
 var player_sound_list = [
 	player_sound1,
 	player_sound2,
@@ -43,14 +49,49 @@ var player_sound_list = [
 	player_sound5
 ]
 
+# Dad audio
+var dad_sound1 = preload("res://Sound/DadNoises-01.ogg")
+var dad_sound2 = preload("res://Sound/DadNoises-02.ogg")
+var dad_sound3 = preload("res://Sound/DadNoises-03.ogg")
+var dad_sound4 = preload("res://Sound/DadNoises-04.ogg")
+var dad_sound5 = preload("res://Sound/DadNoises-05.ogg")
+
+var dad_sound_list = [
+	dad_sound1,
+	dad_sound2,
+	dad_sound3,
+	dad_sound4,
+	dad_sound5
+]
+
+# TV sounds
+var tv_sound1 = preload("res://Sound/tv_noise-01.ogg")
+var tv_sound2 = preload("res://Sound/tv_noise-02.ogg")
+var tv_sound3 = preload("res://Sound/tv_noise-03.ogg")
+var tv_sound4 = preload("res://Sound/tv_noise-04.ogg")
+var tv_sound5 = preload("res://Sound/tv_noise-05.ogg")
+
+var tv_sound_list = [
+	tv_sound1,
+	tv_sound2,
+	tv_sound3,
+	tv_sound4,
+	tv_sound5
+]
+
 var player_portraits = {
 	"Happy": player_happy,
 	"Neutral": player_neutral
 }
 
+var chair_portraits = {
+	"Neutral": chair_portrait
+}
+
 var portraits = {
 	"You": player_portraits,
-	"Old Man McLudum": oldman_portraits
+	"Old Man McLudum": oldman_portraits,
+	"Chair": chair_portraits
 }
 
 var dialogue_path = ""
@@ -117,8 +158,18 @@ func next_phrase():
 		oldman_voice.stream = oldman_sound_list[random_choice]
 		oldman_voice.play()
 	elif current_speaker == "You":
-		player_voice.stream = player_sound_list[random_choice]
-		player_voice.play()
+		if world_parameters.sad_noise:
+			player_voice.stream = player_shock
+			player_voice.play()
+		else:
+			player_voice.stream = player_sound_list[random_choice]
+			player_voice.play()
+	elif current_speaker == "Dad":
+		dad_voice.stream = dad_sound_list[random_choice]
+		dad_voice.play()
+	elif current_speaker == "TV":
+		tv_voice.stream = tv_sound_list[random_choice]
+		tv_voice.play()
 	
 	dialogue_name.bbcode_text = "  " + dialogue[phrase_number]["Name"] + ":"
 	var dialogue_text_to_show = " " + dialogue[phrase_number]["Text"]
@@ -129,9 +180,10 @@ func next_phrase():
 	# Figure out portrait to use
 	var char_name = dialogue[phrase_number]["Name"]
 	var char_emotion = dialogue[phrase_number]["Emotion"]
-	var new_texture = portraits[char_name][char_emotion]
-
-	portrait.texture = new_texture
+	
+	if show_portraits:
+		var new_texture = portraits[char_name][char_emotion]
+		portrait.texture = new_texture
 	
 	while dialogue_text.visible_characters < len(dialogue_text.text):
 		dialogue_text.visible_characters += 1

@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/main_menu_title.tres" type="DynamicFontData" id=1]
+[ext_resource path="res://MainMenu/Credits.gd" type="Script" id=2]
+[ext_resource path="res://MainMenu/ui_game_menu_base.png" type="Texture" id=3]
+[ext_resource path="res://MainMenu/CreditsSelection.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sound/SadMusic.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Fonts/credits_title.tres" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Frame" type="NinePatchRect" parent="."]
+self_modulate = Color( 0.235294, 0.227451, 0.588235, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 3 )
+patch_margin_left = 44
+patch_margin_top = 44
+patch_margin_right = 50
+patch_margin_bottom = 47
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="SplashText" type="Node2D" parent="."]
+position = Vector2( 78, 966 )
+
+[node name="Label" type="Label" parent="SplashText"]
+margin_left = -8.0
+margin_top = -882.0
+margin_right = 1217.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 3 )
+text = "GAME DESIGN, PROGRAMMING,
+WRITING, SOUND, MUSIC BY 
+OLIVER O.
+
+BACKGROUND ART BY 
+BELLA W.
+
+
+SOUNDS MADE IN SFXR.ME
+
+MUSIC MADE IN BEEP BOX
+
+GAME MADE IN GODOT 3.3
+
+THIS IS THE SECOND GAME I HAVE EVER
+MADE! THANK YOU SO MUCH FOR PLAYING"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeDilation" type="Node2D" parent="."]
+position = Vector2( 78, 96 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 990.0
+margin_top = 42.0
+margin_right = 1866.0
+margin_bottom = 485.0
+custom_fonts/font = SubResource( 2 )
+text = "PAPER 
+ROUTE"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsSelection" parent="." instance=ExtResource( 4 )]
+margin_left = 1484.0
+margin_top = 814.0
+margin_right = 1868.0
+margin_bottom = 1214.0

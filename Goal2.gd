@@ -8,6 +8,7 @@ var character_in_range
 onready var prompt = $Prompt
 onready var newspaper = $Paper
 onready var delivered_text = $DeliverText
+onready var ding = $Ding
 
 func _ready() -> void:
 	newspaper.hide()
@@ -26,6 +27,7 @@ func _process(delta: float) -> void:
 				emit_signal("paper_delivered")
 				newspaper.show()
 				delivered_text.show()
+				ding.play()
 	else:
 		if prompt.visible:
 			prompt.hide()

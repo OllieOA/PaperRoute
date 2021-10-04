@@ -76,7 +76,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Continue" type="TextureButton" parent="MenuStuff"]
+[node name="Credits" type="TextureButton" parent="MenuStuff"]
 margin_top = 203.0
 margin_right = 320.0
 margin_bottom = 328.0
@@ -84,7 +84,7 @@ size_flags_horizontal = 5
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="MenuStuff/Continue"]
+[node name="Label" type="Label" parent="MenuStuff/Credits"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
@@ -118,6 +118,6 @@ __meta__ = {
 stream = ExtResource( 6 )
 volume_db = -10.0
 
-[connection signal="pressed" from="MenuStuff/Start" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="MenuStuff/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="MenuStuff/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="MenuStuff/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="MenuStuff/ExitButton" to="." method="_on_ExitButton_pressed"]

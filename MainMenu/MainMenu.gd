@@ -1,6 +1,5 @@
 extends Node2D
 
-onready var animator = $Sprite/AnimationPlayer
 onready var splash_text = $SplashText
 onready var time_dilation = $TimeDilation
 onready var pulse_up = $PulseUp
@@ -12,9 +11,5 @@ onready var main_music = $MainMenuMusic
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#OS.window_fullscreen = true
 	main_music.play()
-	animator.play("TitleAnimation")
 	main_menu_selections.show()
-
-

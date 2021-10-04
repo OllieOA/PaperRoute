@@ -1,0 +1,37 @@
+[
+	{
+		"Name": "TV",
+		"Emotion": "Neutral",
+		"Text": "And now turning to other news. The beloved town journalist, Old Man McLudum..."
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "..."
+	},
+	{
+		"Name": "TV",
+		"Emotion": "Neutral",
+		"Text": "Has unfortunately passed away. The death has been attributed to natural causes."
+	},
+	{
+		"Name": "TV",
+		"Emotion": "Neutral",
+		"Text": "While known around the town, he was otherwise said to live a sedientry lifestyle,"
+	},
+	{
+		"Name": "TV",
+		"Emotion": "Neutral",
+		"Text": "and he has no next of kin. It is unclear who, if anyone, will keep up the local newspaper."
+	},
+	{
+		"Name": "You",
+		"Emotion": "Neutral",
+		"Text": "..."
+	},
+	{
+		"Name": "Dad",
+		"Emotion": "Neutral",
+		"Text": "OI! Get to bed! Turn that TV off and settle down!"
+	}
+]
