@@ -6,7 +6,7 @@
 [ext_resource path="res://MainMenu/ui_game_menu_button_base.png" type="Texture" id=4]
 [ext_resource path="res://MainMenu/ui_game_menu_base.png" type="Texture" id=6]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 onready var sfx_bus_id = AudioServer.get_bus_index(\"Master\")
@@ -62,17 +62,21 @@ func _on_ToggleSFX_pressed() -> void:
 
 func _on_RestartLevel_pressed() -> void:
 	menu_clicker.play()
+	self.hide()
+	get_tree().paused = false
 	yield(get_tree().create_timer(0.5), \"timeout\")
-	get_tree().reload_current_scene()
+	# Get current scene resource
+	var curr_scene = \"res://Levels/Level\" + str(world_parameters.curr_level) + \".tscn\"
+	scene_transition.goto_scene(curr_scene)
 "
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 50
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 36
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -85,7 +89,7 @@ margin_right = 384.0
 margin_bottom = 400.0
 rect_min_size = Vector2( 220, 50 )
 size_flags_horizontal = 4
-script = SubResource( 3 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -120,7 +124,7 @@ __meta__ = {
 [node name="GameMenuTitle" type="Label" parent="MenuStuff"]
 margin_right = 320.0
 margin_bottom = 44.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "MENU"
 align = 1
 valign = 1
@@ -142,7 +146,7 @@ texture_pressed = ExtResource( 2 )
 [node name="Label" type="Label" parent="MenuStuff/RestartLevel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "RESTART LEVEL"
 align = 1
 valign = 1
@@ -161,7 +165,7 @@ texture_pressed = ExtResource( 2 )
 [node name="Label" type="Label" parent="MenuStuff/ToggleMusic"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "TOGGLE MUSIC"
 align = 1
 valign = 1
@@ -180,7 +184,7 @@ texture_pressed = ExtResource( 2 )
 [node name="Label" type="Label" parent="MenuStuff/ToggleSFX"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "TOGGLE SOUND"
 align = 1
 valign = 1
@@ -199,7 +203,7 @@ texture_pressed = ExtResource( 2 )
 [node name="Label" type="Label" parent="MenuStuff/CloseMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "CLOSE MENU"
 align = 1
 valign = 1
@@ -218,7 +222,7 @@ texture_pressed = ExtResource( 2 )
 [node name="Label" type="Label" parent="MenuStuff/ExitButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "EXIT GAME"
 align = 1
 valign = 1

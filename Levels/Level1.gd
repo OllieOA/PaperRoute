@@ -78,6 +78,7 @@ func _ready() -> void:
 	level_timer.set_one_shot(true)
 	level_timer.set_wait_time(seconds_for_level)
 	level_timer.connect("timeout", self, "_out_of_time")
+	world_parameters.curr_level = 1
 	
 	
 func _process(delta: float) -> void:

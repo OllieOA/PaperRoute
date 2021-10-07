@@ -30,6 +30,6 @@ func _on_ExitButton_pressed() -> void:
 
 func _on_RestartLevel_pressed() -> void:
 	menu_clicker.play()
-	yield(get_tree().create_timer(0.5), "timeout")
-	get_tree().reload_current_scene()
+	var curr_scene = "res://Levels/Level" + str(world_parameters.curr_level) + ".tscn"
+	scene_transition.goto_scene(curr_scene)
 	get_tree().paused = false
